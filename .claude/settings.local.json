@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "PowerShell($src = \"C:\\\\Users\\\\merie\\\\.claude\\\\projects\\\\c--dev-yatex\\\\e8cbdcb6-7961-4d57-be54-1f1bcbee3b3b\\\\tool-results\\\\webfetch-1779961977228-aav4gl.bin\"; $dst = \"c:\\\\tmp\\\\design.tar\"; $bytes = [System.IO.File]::ReadAllBytes\\($src\\); $ms = New-Object System.IO.MemoryStream\\(,$bytes\\); $gz = New-Object System.IO.Compression.GzipStream\\($ms, [System.IO.Compression.CompressionMode]::Decompress\\); $out = New-Object System.IO.FileStream\\($dst, [System.IO.FileMode]::Create\\); $gz.CopyTo\\($out\\); $out.Close\\(\\); $gz.Close\\(\\); $ms.Close\\(\\); Get-Item $dst)",
+      "PowerShell(Copy-Item \"c:\\\\tmp\\\\design\\\\yatex\\\\project\\\\YATEX.html\" \"c:\\\\dev\\\\yatex\\\\YATEX.html\")",
+      "PowerShell(Copy-Item \"c:\\\\tmp\\\\design\\\\yatex\\\\project\\\\yatex.css\" \"c:\\\\dev\\\\yatex\\\\yatex.css\")",
+      "PowerShell(Copy-Item \"c:\\\\tmp\\\\design\\\\yatex\\\\project\\\\yatex-i18n.js\" \"c:\\\\dev\\\\yatex\\\\yatex-i18n.js\")",
+      "PowerShell(Copy-Item \"c:\\\\tmp\\\\design\\\\yatex\\\\project\\\\yatex-cfg.js\" \"c:\\\\dev\\\\yatex\\\\yatex-cfg.js\")",
+      "PowerShell(Copy-Item \"c:\\\\tmp\\\\design\\\\yatex\\\\project\\\\YATEX.html\" \"c:\\\\dev\\\\yatex\\\\index.html\")",
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "PowerShell(npx --version)",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"c:\\\\dev\\\\yatex\\\\reference\")",
+      "PowerShell(Move-Item \"c:\\\\dev\\\\yatex\\\\YATEX.html\" \"c:\\\\dev\\\\yatex\\\\reference\\\\YATEX.html\")",
+      "PowerShell(Move-Item \"c:\\\\dev\\\\yatex\\\\yatex.css\" \"c:\\\\dev\\\\yatex\\\\reference\\\\yatex.css\")",
+      "PowerShell(Move-Item \"c:\\\\dev\\\\yatex\\\\yatex-i18n.js\" \"c:\\\\dev\\\\yatex\\\\reference\\\\yatex-i18n.js\")",
+      "PowerShell(Move-Item \"c:\\\\dev\\\\yatex\\\\yatex-cfg.js\" \"c:\\\\dev\\\\yatex\\\\reference\\\\yatex-cfg.js\")"
+    ]
+  }
+}
