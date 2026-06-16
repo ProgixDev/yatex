@@ -15,7 +15,10 @@
       "PowerShell(Move-Item \"c:\\\\dev\\\\yatex\\\\YATEX.html\" \"c:\\\\dev\\\\yatex\\\\reference\\\\YATEX.html\")",
       "PowerShell(Move-Item \"c:\\\\dev\\\\yatex\\\\yatex.css\" \"c:\\\\dev\\\\yatex\\\\reference\\\\yatex.css\")",
       "PowerShell(Move-Item \"c:\\\\dev\\\\yatex\\\\yatex-i18n.js\" \"c:\\\\dev\\\\yatex\\\\reference\\\\yatex-i18n.js\")",
-      "PowerShell(Move-Item \"c:\\\\dev\\\\yatex\\\\yatex-cfg.js\" \"c:\\\\dev\\\\yatex\\\\reference\\\\yatex-cfg.js\")"
+      "PowerShell(Move-Item \"c:\\\\dev\\\\yatex\\\\yatex-cfg.js\" \"c:\\\\dev\\\\yatex\\\\reference\\\\yatex-cfg.js\")",
+      "PowerShell(Move-Item \"c:\\\\tmp\\\\yatex-reference\" \"c:\\\\dev\\\\yatex\\\\reference\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /tmp/yatex.html -w \"%{http_code}\\\\n\" http://localhost:3000/)"
     ]
   }
 }

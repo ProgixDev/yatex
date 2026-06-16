@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>YATEX — Recyclage et tri de friperie en Tunisie</title>
+<meta name="description" content="YATEX, partenaire tunisien en importation, tri, valorisation et export de vêtements et chaussures de seconde main." />
+<link rel="stylesheet" href="yatex.css" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 50'%3E%3Crect width='40' height='50' fill='%23283618'/%3E%3Cg fill='none' stroke='%23FEFAE0' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M5 8 Q14 8 20 17 Q26 8 35 8'/%3E%3Cpath d='M20 17 L20 40'/%3E%3C/g%3E%3Cline x1='3' y1='45' x2='37' y2='45' stroke='%23DDA15E' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body class="lang-fr">
+
+<!-- Scroll progress + chapter rail -->
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+<nav class="chapter-rail" id="chapterRail" aria-label="Sections"></nav>
+
+<!-- ============== NAVIGATION ============== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#accueil" class="brand" aria-label="YATEX — accueil">
+      <span class="brand-mark">
+        <svg viewBox="0 0 40 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M3 3 Q13 3 20 13 Q27 3 37 3"/>
+            <path d="M20 13 L20 43"/>
+          </g>
+          <line x1="0" y1="48" x2="40" y2="48" stroke="#DDA15E" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">YATEX</span>
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#accueil" class="active" data-t="nav.home">Accueil</a></li>
+        <li><a href="#apropos" data-t="nav.about">À propos</a></li>
+        <li><a href="#processus" data-t="nav.process">Processus</a></li>
+        <li><a href="#produits" data-t="nav.products">Produits</a></li>
+        <li><a href="#galerie" data-t="nav.gallery">Galerie</a></li>
+        <li><a href="#contact" data-t="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Langue / Language">
+      <button class="opt on" data-lang="fr" aria-pressed="true">FR</button>
+      <button class="opt" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a href="#contact" class="btn nav-cta">
+      <span data-t="nav.cta">Démarrer une commande</span>
+      <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg>
+    </a>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 7h18"/><path d="M3 12h18"/><path d="M3 17h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<aside class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#accueil" class="mlink" data-t="nav.home">Accueil</a></li>
+    <li><a href="#apropos" class="mlink" data-t="nav.about">À propos</a></li>
+    <li><a href="#processus" class="mlink" data-t="nav.process">Processus</a></li>
+    <li><a href="#produits" class="mlink" data-t="nav.products">Produits</a></li>
+    <li><a href="#galerie" class="mlink" data-t="nav.gallery">Galerie</a></li>
+    <li><a href="#contact" class="mlink" data-t="nav.contact">Contact</a></li>
+  </ul>
+</aside>
+
+<!-- ============== HERO ============== -->
+<section class="hero" id="accueil" data-screen-label="01 Hero">
+  <video class="hero-bg" id="heroBg" autoplay muted loop playsinline preload="auto"
+         poster="https://images.unsplash.com/photo-1601333144130-8cbb312386b6?auto=format&fit=crop&w=2400&q=80">
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-warehouse-port-for-cargo-ships-39462-hd-ready.mp4" type="video/mp4" />
+    <source src="https://assets.mixkit.co/videos/39462/39462-720.mp4" type="video/mp4" />
+    <source src="https://assets.mixkit.co/videos/39462/39462-360.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-noise"></div>
+
+  <div class="hero-top">
+    <div class="eyebrow" data-t="hero.eyebrow">YATEX · Tunisie</div>
+  </div>
+
+  <div class="hero-content">
+    <h1>
+      <span class="word-reveal" style="--wd: 0ms"><span data-t="hero.word.1">Recyclage</span></span>
+      <span class="word-reveal" style="--wd: 80ms"><span data-t="hero.word.2">&amp; tri</span></span><br/>
+      <span class="word-reveal" style="--wd: 160ms"><span class="italic" data-t="hero.word.3">de friperie.</span></span>
+    </h1>
+    <p class="hero-tagline" data-reveal style="--rd: 500ms" data-t="hero.tagline">
+      Votre partenaire en recyclage, tri et valorisation de vêtements de seconde main — pour les marchés locaux et internationaux.
+    </p>
+    <div class="hero-ctas" data-reveal style="--rd: 700ms">
+      <a href="#contact" class="btn">
+        <span data-t="hero.cta.primary">Démarrer une commande</span>
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg>
+      </a>
+      <a href="#apropos" class="btn btn-ghost" data-t="hero.cta.secondary">Découvrir YATEX</a>
+    </div>
+  </div>
+
+  <div class="hero-foot" aria-hidden="true">
+    <div class="l" data-t="hero.foot.l">Italie · Canada · Allemagne · Pays-Bas<br/>Conteneurs 40 HC · Remorques 53 ft</div>
+    <div class="r" data-t="hero.foot.r">Importation — Tri — Valorisation<br/>Conditionnement — Export</div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span data-t="hero.scroll">Défiler</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ============== À PROPOS ============== -->
+<section class="section" id="apropos" data-screen-label="02 À propos">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="left">
+        <div class="eyebrow" data-reveal data-t="about.eyebrow">02 — Qui sommes-nous</div>
+        <h2 data-reveal style="--rd: 80ms" data-t="about.title">Une plateforme tunisienne<br/>au service d'un marché<br/><em>global.</em></h2>
+      </div>
+      <div class="right">
+        <p class="lead" data-reveal style="--rd: 160ms" data-t="about.lead">
+          YATEX est une entreprise tunisienne spécialisée dans le recyclage, le tri et la valorisation de vêtements et chaussures de seconde main.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-copy">
+        <p data-reveal data-t="about.p1">
+          Nous travaillons à partir de marchandises collectées en Europe et en Amérique du Nord, acheminées directement vers notre plateforme par voie maritime et routière. Chaque arrivage est inspecté, trié et conditionné pour répondre aux exigences spécifiques de nos partenaires.
+        </p>
+        <p data-reveal style="--rd: 80ms" data-t="about.p2">
+          Notre mission : donner une seconde vie aux textiles, et proposer à nos clients des solutions fiables, compétitives et adaptées aux exigences du marché.
+        </p>
+
+        <div class="origins" data-reveal style="--rd: 160ms">
+          <h5 data-t="about.origins.head">Origines des marchandises</h5>
+          <ul class="origin-list">
+            <li><span class="flag it"><span></span><span></span><span></span></span><span data-t="marq.it">Italie</span></li>
+            <li><span class="flag ca"><span></span><span></span><span></span></span><span data-t="marq.ca">Canada</span></li>
+            <li><span class="flag de"><span></span><span></span><span></span></span><span data-t="marq.de">Allemagne</span></li>
+            <li><span class="flag nl"><span></span><span></span><span></span></span><span data-t="marq.nl">Pays-Bas</span></li>
+          </ul>
+        </div>
+
+        <div class="containers" data-reveal style="--rd: 200ms">
+          <div class="container-card">
+            <div class="num">40<span style="font-size:0.55em; color: var(--y-olive);"> HC</span></div>
+            <div class="lbl" data-t="about.containers.maritime">Conteneurs maritimes</div>
+          </div>
+          <div class="container-card">
+            <div class="num">53<span style="font-size:0.55em; color: var(--y-olive);"> ft</span></div>
+            <div class="lbl" data-t="about.containers.road">Remorques routières</div>
+          </div>
+        </div>
+      </div>
+
+      <figure class="about-figure" data-reveal="img">
+        <img src="https://images.unsplash.com/photo-1604176354204-9268737828e4?auto=format&fit=crop&w=1400&q=80" alt="Ballots de textile en entrepôt" />
+        <figcaption class="about-meta">
+          <span class="l" data-t="about.figure.l">Plateforme YATEX · Tunis</span>
+          <span class="r" data-t="about.figure.r">est. 2018</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROCESSUS ============== -->
+<section class="section process" id="processus" data-screen-label="03 Processus">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="left">
+        <div class="eyebrow" data-reveal data-t="process.eyebrow">03 — Notre processus</div>
+        <h2 data-reveal style="--rd: 80ms" data-t="process.title">De l'origine au conteneur,<br/>une chaîne <em>maîtrisée.</em></h2>
+      </div>
+      <div class="right">
+        <p class="lead" data-reveal style="--rd: 160ms" data-t="process.lead">
+          Quatre étapes opérationnelles, suivies sans interruption — depuis la collecte en Europe et au Canada jusqu'à l'expédition vers nos clients.
+        </p>
+      </div>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step" data-reveal>
+        <span class="pulse"></span>
+        <div class="num" data-t="process.s1.label">01 / Collecte</div>
+        <div>
+          <h3 data-t="process.s1.title">Collecte</h3>
+          <p style="margin-top: 14px;" data-t="process.s1.desc">Approvisionnement international depuis l'Europe et l'Amérique du Nord, en partenariat avec des collecteurs sélectionnés.</p>
+        </div>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h13l4 4v6h-2"/><path d="M16 19H9"/><circle cx="6.5" cy="19" r="2.5"/><circle cx="17.5" cy="19" r="2.5"/><path d="M3 9V5h13v4"/></svg>
+      </div>
+      <div class="process-step" data-reveal style="--rd: 90ms">
+        <span class="pulse"></span>
+        <div class="num" data-t="process.s2.label">02 / Tri</div>
+        <div>
+          <h3 data-t="process.s2.title">Tri</h3>
+          <p style="margin-top: 14px;" data-t="process.s2.desc">Sélection rigoureuse selon la catégorie, la saison et la qualité — par des trieurs spécialisés.</p>
+        </div>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v6a3 3 0 0 0 3 3h6a3 3 0 0 1 3 3v4"/><path d="m3 7 3-3 3 3"/><path d="m15 17 3 3 3-3"/></svg>
+      </div>
+      <div class="process-step" data-reveal style="--rd: 180ms">
+        <span class="pulse"></span>
+        <div class="num" data-t="process.s3.label">03 / Conditionnement</div>
+        <div>
+          <h3 data-t="process.s3.title">Conditionnement</h3>
+          <p style="margin-top: 14px;" data-t="process.s3.desc">Préparation en ballots de 45 et 55 kg, adaptés aux besoins spécifiques et au format de transport.</p>
+        </div>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg>
+      </div>
+      <div class="process-step" data-reveal style="--rd: 270ms">
+        <span class="pulse"></span>
+        <div class="num" data-t="process.s4.label">04 / Expédition</div>
+        <div>
+          <h3 data-t="process.s4.title">Expédition</h3>
+          <p style="margin-top: 14px;" data-t="process.s4.desc">Chargement et livraison vers les marchés locaux et internationaux, avec documentation complète.</p>
+        </div>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V8h14v12"/><path d="M9 20v-6h6v6"/><path d="M3 8 12 3l9 5"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PRODUITS ============== -->
+<section class="section products" id="produits" data-screen-label="04 Produits">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="left">
+        <div class="eyebrow" data-reveal data-t="products.eyebrow">04 — Nos produits</div>
+        <h2 data-reveal style="--rd: 80ms" data-t="products.title">Des formats précis,<br/>des catégories <em>spécifiques.</em></h2>
+      </div>
+      <div class="right">
+        <p class="lead" data-reveal style="--rd: 160ms" data-t="products.lead">
+          Deux formats standards, huit catégories de tri — déclinables selon volume, saison et destination.
+        </p>
+      </div>
+    </div>
+
+    <h5 style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--y-olive); margin: 0 0 20px; font-weight: 600;" data-reveal data-t="products.formats.head">Formats disponibles</h5>
+    <div class="formats">
+      <div class="format-card" data-reveal>
+        <div>
+          <div class="lbl" data-t="products.f1.label">Ballot standard</div>
+          <h3 style="color: var(--y-canvas); margin-top: 6px;" data-t="products.f1.title">Format compact</h3>
+          <div class="desc" data-t="products.f1.desc">Conçu pour les revendeurs cherchant une rotation rapide.</div>
+        </div>
+        <div class="weight">45<span style="font-size: 0.5em;"> kg</span></div>
+      </div>
+      <div class="format-card" data-reveal style="--rd: 100ms">
+        <div>
+          <div class="lbl" data-t="products.f2.label">Ballot grand format</div>
+          <h3 style="color: var(--y-canvas); margin-top: 6px;" data-t="products.f2.title">Format volume</h3>
+          <div class="desc" data-t="products.f2.desc">Optimisé pour les marchés export à fort tonnage.</div>
+        </div>
+        <div class="weight">55<span style="font-size: 0.5em;"> kg</span></div>
+      </div>
+    </div>
+
+    <h5 style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--y-olive); margin: 56px 0 20px; font-weight: 600;" data-reveal data-t="products.cats.head">Catégories proposées</h5>
+    <div class="cat-grid">
+      <div class="cat-cell" data-reveal>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m4.93 19.07 1.41-1.41"/><path d="m17.66 6.34 1.41-1.41"/></svg>
+        <span class="cat-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M7 7h10v10"/></svg></span>
+        <div class="sub" data-t="products.cat.season">Saison</div>
+        <div class="name" data-t="products.cat.summer">Ballots été</div>
+      </div>
+      <div class="cat-cell" data-reveal style="--rd: 60ms">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m4.93 4.93 14.14 14.14"/><path d="M2 12h20"/><path d="m19.07 4.93-14.14 14.14"/></svg>
+        <span class="cat-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M7 7h10v10"/></svg></span>
+        <div class="sub" data-t="products.cat.season">Saison</div>
+        <div class="name" data-t="products.cat.winter">Ballots hiver</div>
+      </div>
+      <div class="cat-cell" data-reveal style="--rd: 120ms">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+        <span class="cat-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M7 7h10v10"/></svg></span>
+        <div class="sub" data-t="products.cat.segment">Segment</div>
+        <div class="name" data-t="products.cat.men">Vêtements homme</div>
+      </div>
+      <div class="cat-cell" data-reveal style="--rd: 180ms">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6c4 0 6-3 9-3s5 3 9 3l-2 5-3-1v12H8V10L5 11 3 6z"/></svg>
+        <span class="cat-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M7 7h10v10"/></svg></span>
+        <div class="sub" data-t="products.cat.segment">Segment</div>
+        <div class="name" data-t="products.cat.women">Vêtements femme</div>
+      </div>
+      <div class="cat-cell" data-reveal style="--rd: 60ms">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v3l-3 1v3l-2 1v12h16V10l-2-1V6l-3-1V2H9z"/></svg>
+        <span class="cat-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M7 7h10v10"/></svg></span>
+        <div class="sub" data-t="products.cat.segment">Segment</div>
+        <div class="name" data-t="products.cat.kids">Vêtements enfant</div>
+      </div>
+      <div class="cat-cell" data-reveal style="--rd: 120ms">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c0 3 2 5 5 5h11c2 0 3-1 3-3l-2-2c-2-1-3-2-4-3l-4-4c-1-1-2-1-3-1H4c-1 0-1 1-1 2v6z"/><path d="M7 10v4"/><path d="M10 12v4"/><path d="M13 14v3"/></svg>
+        <span class="cat-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M7 7h10v10"/></svg></span>
+        <div class="sub" data-t="products.cat.product">Produit</div>
+        <div class="name" data-t="products.cat.shoes">Chaussures</div>
+      </div>
+      <div class="cat-cell" data-reveal style="--rd: 180ms">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v3l-4 11H8L4 10V7z"/><path d="M9 4h6v3H9z"/></svg>
+        <span class="cat-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M7 7h10v10"/></svg></span>
+        <div class="sub" data-t="products.cat.product">Produit</div>
+        <div class="name" data-t="products.cat.acc">Accessoires</div>
+      </div>
+      <div class="cat-cell" data-reveal style="--rd: 240ms">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span class="cat-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 10-10"/><path d="M7 7h10v10"/></svg></span>
+        <div class="sub" data-t="products.cat.category">Catégorie</div>
+        <div class="name" data-t="products.cat.mixed">Articles mixtes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== WHY ============== -->
+<section class="section why" data-screen-label="05 Pourquoi">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="left">
+        <div class="eyebrow" data-reveal data-t="why.eyebrow">05 — Pourquoi travailler avec nous</div>
+        <h2 data-reveal style="--rd: 80ms" data-t="why.title">Huit raisons<br/>de nous <em>choisir.</em></h2>
+      </div>
+      <div class="right">
+        <p class="lead" data-reveal style="--rd: 160ms" data-t="why.lead">
+          La fiabilité d'un acteur établi, la flexibilité d'un partenaire de proximité — et un engagement long terme pour la valorisation textile.
+        </p>
+      </div>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card" data-reveal>
+        <span class="num">01</span>
+        <h4 data-t="why.1.h">Qualité de tri professionnelle</h4>
+        <p data-t="why.1.p">Inspecteurs et trieurs spécialisés — chaque ballot est conforme à la grille de qualité annoncée.</p>
+      </div>
+      <div class="why-card" data-reveal style="--rd: 60ms">
+        <span class="num">02</span>
+        <h4 data-t="why.2.h">Approvisionnement régulier</h4>
+        <p data-t="why.2.p">Quatre origines, flux continu de conteneurs — la chaîne ne s'arrête jamais.</p>
+      </div>
+      <div class="why-card" data-reveal style="--rd: 120ms">
+        <span class="num">03</span>
+        <h4 data-t="why.3.h">Sélection adaptée au marché</h4>
+        <p data-t="why.3.p">Composition des ballots ajustée à votre marché — climat, segment, pouvoir d'achat.</p>
+      </div>
+      <div class="why-card" data-reveal style="--rd: 180ms">
+        <span class="num">04</span>
+        <h4 data-t="why.4.h">Prix compétitifs</h4>
+        <p data-t="why.4.p">Tarification transparente, négociée par volume et destination.</p>
+      </div>
+      <div class="why-card" data-reveal>
+        <span class="num">05</span>
+        <h4 data-t="why.5.h">Satisfaction client</h4>
+        <p data-t="why.5.p">Suivi opérationnel personnalisé, de la commande à la livraison du conteneur.</p>
+      </div>
+      <div class="why-card" data-reveal style="--rd: 60ms">
+        <span class="num">06</span>
+        <h4 data-t="why.6.h">Expédition nationale &amp; internationale</h4>
+        <p data-t="why.6.p">Documentation export complète et logistique maritime maîtrisée.</p>
+      </div>
+      <div class="why-card" data-reveal style="--rd: 120ms">
+        <span class="num">07</span>
+        <h4 data-t="why.7.h">Respect de l'environnement</h4>
+        <p data-t="why.7.p">Une seconde vie pour les textiles — réduction des déchets, réduction de l'impact.</p>
+      </div>
+      <div class="why-card" data-reveal style="--rd: 180ms">
+        <span class="num">08</span>
+        <h4 data-t="why.8.h">Valorisation textile durable</h4>
+        <p data-t="why.8.p">Notre modèle économique soutient une filière circulaire de bout en bout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MARQUEE (transition strip) ============== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span data-t="marq.it">Italie</span><span data-t="marq.ca">Canada</span><span data-t="marq.de">Allemagne</span><span data-t="marq.nl">Pays-Bas</span>
+    <span data-t="marq.seasons">Ballots été · hiver</span><span data-t="marq.segments">Homme · Femme · Enfant</span><span data-t="marq.shoes">Chaussures &amp; accessoires</span>
+    <span data-t="marq.export">Export international</span>
+    <span data-t="marq.it">Italie</span><span data-t="marq.ca">Canada</span><span data-t="marq.de">Allemagne</span><span data-t="marq.nl">Pays-Bas</span>
+    <span data-t="marq.seasons">Ballots été · hiver</span><span data-t="marq.segments">Homme · Femme · Enfant</span><span data-t="marq.shoes">Chaussures &amp; accessoires</span>
+    <span data-t="marq.export">Export international</span>
+  </div>
+</div>
+
+<!-- ============== GALERIE ============== -->
+<section class="section" id="galerie" data-screen-label="06 Galerie">
+  <div class="wrap-wide">
+    <div class="wrap" style="padding: 0;">
+      <div class="s-head">
+        <div class="left">
+          <div class="eyebrow" data-reveal data-t="gal.eyebrow">06 — Galerie</div>
+          <h2 data-reveal style="--rd: 80ms" data-t="gal.title">Sur la plateforme,<br/>au quotidien.</h2>
+        </div>
+        <div class="right">
+          <p class="lead" data-reveal style="--rd: 160ms" data-t="gal.lead">
+            Documentation opérationnelle — arrivages, postes de tri, conditionnement et chargement. Ce que voient nos partenaires lorsqu'ils visitent YATEX.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-grid">
+      <a class="gallery-item g-1" data-reveal="img">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1400&q=80" alt="Entrepôt industriel" />
+        <span class="cap" data-t="gal.cap.1">Stock plateforme</span>
+      </a>
+      <a class="gallery-item g-2" data-reveal="img">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=1400&q=80" alt="Conteneur maritime" />
+        <span class="cap" data-t="gal.cap.2">Chargement export</span>
+      </a>
+      <a class="gallery-item g-3" data-reveal="img">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1200&q=80" alt="Vêtements suspendus" />
+        <span class="cap" data-t="gal.cap.3">Vêtements triés</span>
+      </a>
+      <a class="gallery-item g-4" data-reveal="img">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1605883705077-8d3d3cebe78c?auto=format&fit=crop&w=1200&q=80" alt="Ballots de textile" />
+        <span class="cap" data-t="gal.cap.4">Arrivage</span>
+      </a>
+      <a class="gallery-item g-5" data-reveal="img">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80" alt="Vêtements colorés" />
+        <span class="cap" data-t="gal.cap.5">Sélection</span>
+      </a>
+      <a class="gallery-item g-6" data-reveal="img">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1400&q=80" alt="Vêtements pliés" />
+        <span class="cap" data-t="gal.cap.6">Conditionnement</span>
+      </a>
+      <a class="gallery-item g-7" data-reveal="img">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80" alt="Entrepôt logistique" />
+        <span class="cap" data-t="gal.cap.7">Plateforme de tri</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CONDITIONS ============== -->
+<section class="section conditions" data-screen-label="07 Conditions">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="left">
+        <div class="eyebrow" data-reveal data-t="cond.eyebrow">07 — Conditions de vente</div>
+        <h2 data-reveal style="--rd: 80ms" data-t="cond.title">Une structure de paiement<br/><em>transparente.</em></h2>
+      </div>
+      <div class="right">
+        <p class="lead" data-reveal style="--rd: 160ms" data-t="cond.lead">
+          Deux versements simples, alignés sur les jalons opérationnels de votre commande.
+        </p>
+      </div>
+    </div>
+
+    <div class="cond-block">
+      <div class="cond-card" data-reveal>
+        <span class="step-num" data-t="cond.c1.step">Étape 01</span>
+        <div class="pct counter" data-target="50" data-suffix="%">0</div>
+        <div>
+          <div class="label" data-t="cond.c1.label">Dépôt initial</div>
+          <h4 data-t="cond.c1.h">Lors du lancement de la commande</h4>
+        </div>
+      </div>
+      <div class="cond-card" data-reveal style="--rd: 120ms">
+        <span class="step-num" data-t="cond.c2.step">Étape 02</span>
+        <div class="pct counter" data-target="50" data-suffix="%">0</div>
+        <div>
+          <div class="label" data-t="cond.c2.label">Solde</div>
+          <h4 data-t="cond.c2.h">À la fermeture du conteneur ou autre moyen de transport</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="cond-note" data-reveal style="--rd: 240ms" data-t="cond.note">
+      <strong style="color: var(--y-gold); font-weight: 500;">À noter —</strong> les conditions sont adaptées selon volume, destination et nature de la commande. Toutes les modalités sont précisées dans le devis personnalisé.
+    </div>
+  </div>
+</section>
+
+<!-- ============== CONTACT (CONFIGURATOR) ============== -->
+<section class="section" id="contact" data-screen-label="08 Contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="eyebrow" data-reveal data-t="cx.eyebrow">08 — Contact</div>
+        <h2 data-reveal style="--rd: 80ms; margin-top: 24px;" data-t="cx.title">Contactez-nous<br/>pour un devis <em>personnalisé.</em></h2>
+        <p class="lead" data-reveal style="--rd: 160ms" data-t="cx.lead">
+          La liste des articles disponibles ainsi que les prix varient selon la saison, la catégorie et les volumes demandés. Pour recevoir un devis précis et adapté à vos besoins, complétez le configurateur — nous revenons vers vous sous 24h ouvrées.
+        </p>
+
+        <div class="contact-info" data-reveal style="--rd: 240ms">
+          <div class="row">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span class="lbl" data-t="cx.info.email">Email</span>
+            <a href="mailto:yousfirecyclage@gmail.com">yousfirecyclage@gmail.com</a>
+          </div>
+          <div class="row">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-7-8-13a8 8 0 1 1 16 0c0 6-8 13-8 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <span class="lbl" data-t="cx.info.addr">Adresse</span>
+            <span data-t="cx.info.addr.v">Plateforme YATEX, Tunisie</span>
+          </div>
+          <div class="row">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span class="lbl" data-t="cx.info.resp">Réponse</span>
+            <span data-t="cx.info.resp.v">Sous 24h ouvrées</span>
+          </div>
+          <div class="row">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20"/><path d="M12 2a15 15 0 0 0 0 20"/></svg>
+            <span class="lbl" data-t="cx.info.export">Export</span>
+            <span data-t="cx.info.export.v">National &amp; international</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Configurator host — built by yatex-cfg.js -->
+      <div id="yatex-cfg" data-reveal="fade" style="--rd: 200ms"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#accueil" class="brand">
+          <span class="brand-mark">
+            <svg viewBox="0 0 40 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M3 3 Q13 3 20 13 Q27 3 37 3"/>
+                <path d="M20 13 L20 43"/>
+              </g>
+              <line x1="0" y1="48" x2="40" y2="48" stroke="#DDA15E" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">YATEX</span>
+        </a>
+        <p class="footer-tag" data-t="foot.tag">Votre partenaire en recyclage et tri de friperie en Tunisie. Importation, tri, valorisation, conditionnement, export.</p>
+      </div>
+      <div>
+        <h5 data-t="foot.nav">Navigation</h5>
+        <ul>
+          <li><a href="#accueil" data-t="nav.home">Accueil</a></li>
+          <li><a href="#apropos" data-t="nav.about">À propos</a></li>
+          <li><a href="#processus" data-t="nav.process">Processus</a></li>
+          <li><a href="#produits" data-t="nav.products">Produits</a></li>
+          <li><a href="#galerie" data-t="nav.gallery">Galerie</a></li>
+          <li><a href="#contact" data-t="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-t="foot.prods">Produits</h5>
+        <ul>
+          <li><a href="#produits">Ballots 45 kg</a></li>
+          <li><a href="#produits">Ballots 55 kg</a></li>
+          <li><a href="#produits"><span data-t="marq.seasons">Été / Hiver</span></a></li>
+          <li><a href="#produits"><span data-t="marq.segments">Homme · Femme · Enfant</span></a></li>
+          <li><a href="#produits"><span data-t="marq.shoes">Chaussures &amp; accessoires</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-t="foot.contact">Contact</h5>
+        <ul>
+          <li><a href="mailto:yousfirecyclage@gmail.com">yousfirecyclage@gmail.com</a></li>
+          <li data-t="cx.info.addr.v">Plateforme YATEX, Tunisie</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span data-t="foot.copy">© <span id="year">2026</span> YATEX — Tous droits réservés.</span>
+      <span data-t="foot.tagline">Recyclage · Tri · Valorisation textile</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mark JS-ready immediately so the hidden initial state activates only
+  // when we know the reveal layer can run. If anything below fails, the
+  // safety timeout further down forces every element visible.
+  document.documentElement.classList.add('js-ready');
+
+  // ---------- Scroll progress + chapter rail ----------
+  const progressBar = document.getElementById('scrollProgressBar');
+  const chapterRail = document.getElementById('chapterRail');
+  const railSections = [
+    { id: 'accueil',   labelFr: 'Accueil',    labelEn: 'Home',     dark: true  },
+    { id: 'apropos',   labelFr: 'À propos',   labelEn: 'About',    dark: false },
+    { id: 'processus', labelFr: 'Processus',  labelEn: 'Process',  dark: true  },
+    { id: 'produits',  labelFr: 'Produits',   labelEn: 'Products', dark: false },
+    { id: 'galerie',   labelFr: 'Galerie',    labelEn: 'Gallery',  dark: false },
+    { id: 'contact',   labelFr: 'Contact',    labelEn: 'Contact',  dark: false }
+  ];
+  function railLang() { return document.documentElement.lang === 'en' ? 'labelEn' : 'labelFr'; }
+  function buildRail() {
+    const key = railLang();
+    chapterRail.innerHTML = railSections.map(s => `
+      <a href="#${s.id}" class="chip" data-id="${s.id}" data-dark="${s.dark}">
+        <span class="label">${s[key]}</span>
+        <span class="dot"></span>
+      </a>`).join('');
+  }
+  buildRail();
+  window.addEventListener('langchange', buildRail);
+
+  function updateScrollUI() {
+    const docH = document.documentElement;
+    const max = docH.scrollHeight - docH.clientHeight;
+    const pct = max > 0 ? docH.scrollTop / max : 0;
+    progressBar.style.transform = `scaleX(${pct})`;
+
+    // active rail chip + dark-mode detection
+    const y = window.scrollY + window.innerHeight * 0.35;
+    let activeId = railSections[0].id;
+    let activeDark = railSections[0].dark;
+    for (const s of railSections) {
+      const el = document.getElementById(s.id);
+      if (el && el.offsetTop <= y) { activeId = s.id; activeDark = s.dark; }
+    }
+    chapterRail.classList.toggle('on-dark', activeDark);
+    chapterRail.classList.toggle('show', window.scrollY > 200);
+    chapterRail.querySelectorAll('.chip').forEach(c =>
+      c.classList.toggle('active', c.dataset.id === activeId)
+    );
+  }
+  document.addEventListener('scroll', updateScrollUI, { passive: true });
+  updateScrollUI();
+
+  // ---------- Nav scroll state ----------
+  const nav = document.getElementById('nav');
+  const navLinks = document.querySelectorAll('#navLinks a');
+  const sections = ['accueil','apropos','processus','produits','galerie','contact']
+    .map(id => document.getElementById(id)).filter(Boolean);
+
+  function onScroll() {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 40);
+
+    // Active link
+    let active = sections[0]?.id;
+    const fromTop = y + 120;
+    for (const s of sections) {
+      if (s.offsetTop <= fromTop) active = s.id;
+    }
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + active));
+
+    // Hero parallax — background video + foreground content drift opposite ways
+    const heroBg = document.getElementById('heroBg');
+    if (heroBg && y < window.innerHeight) {
+      const p = y * 0.35;
+      heroBg.style.transform = `translateY(${p}px) scale(${1.08 + y * 0.0002})`;
+    }
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent && y < window.innerHeight) {
+      heroContent.style.transform = `translateY(${y * -0.12}px)`;
+      heroContent.style.opacity = Math.max(0, 1 - y / (window.innerHeight * 0.9));
+    }
+
+    // Section heading subtle float — translate Y based on viewport center
+    const vh = window.innerHeight;
+    document.querySelectorAll('.s-head h2').forEach(h => {
+      const r = h.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      const center = r.top + r.height / 2;
+      const dist = (center - vh / 2) / vh;
+      h.style.transform = `translateY(${(-dist * 18).toFixed(1)}px)`;
+    });
+
+    // About figure parallax
+    const figs = document.querySelectorAll('.about-figure');
+    figs.forEach(f => {
+      const r = f.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      const center = r.top + r.height / 2;
+      const dist = (center - vh / 2) / vh;
+      const img = f.querySelector('img');
+      if (img) img.style.transform = `translateY(${(-dist * 30).toFixed(1)}px) scale(1.08)`;
+    });
+  }
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ---------- Mobile menu ----------
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger?.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mlink').forEach(a => {
+    a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  // ---------- Reveal on scroll ----------
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  const wordReveals = document.querySelectorAll('.word-reveal');
+  const allReveal = [...revealEls, ...wordReveals];
+
+  function revealInView() {
+    const vh = window.innerHeight;
+    allReveal.forEach(el => {
+      if (el.classList.contains('in')) return;
+      const r = el.getBoundingClientRect();
+      if (r.top < vh * 0.92 && r.bottom > 0) el.classList.add('in');
+    });
+  }
+
+  let io = null;
+  if ('IntersectionObserver' in window) {
+    io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    allReveal.forEach(el => io.observe(el));
+  }
+
+  document.addEventListener('scroll', revealInView, { passive: true });
+  requestAnimationFrame(() => requestAnimationFrame(revealInView));
+  window.addEventListener('load', revealInView);
+  setTimeout(() => { allReveal.forEach(el => el.classList.add('in')); }, 1400);
+
+  // ---------- Counter animation ----------
+  const counters = document.querySelectorAll('.counter');
+
+  function runCounter(el) {
+    if (el.dataset.ran) return;
+    el.dataset.ran = '1';
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
+    const dur = 1400;
+    const start = performance.now();
+    function step(t) {
+      const p = Math.min(1, (t - start) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  let cio = null;
+  if ('IntersectionObserver' in window) {
+    cio = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          runCounter(e.target);
+          cio.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => cio.observe(c));
+  }
+
+  function runCountersInView() {
+    const vh = window.innerHeight;
+    counters.forEach(c => {
+      if (c.dataset.ran) return;
+      const r = c.getBoundingClientRect();
+      if (r.top < vh * 0.95 && r.bottom > 0) runCounter(c);
+    });
+  }
+  document.addEventListener('scroll', runCountersInView, { passive: true });
+  requestAnimationFrame(() => requestAnimationFrame(runCountersInView));
+  setTimeout(() => counters.forEach(runCounter), 1500);
+
+  // ---------- Smooth scroll fallback ----------
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        const target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.scrollY - 60;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+</script>
+
+<!-- Modules: i18n, configurator -->
+<script src="yatex-i18n.js"></script>
+<script src="yatex-cfg.js"></script>
+
+</body>
+</html>
