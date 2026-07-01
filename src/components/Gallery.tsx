@@ -1,45 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useLang, html } from "@/lib/i18n/LangContext";
+import { GALLERY } from "@/lib/images";
 import { Reveal } from "./Reveal";
-
-const TILES = [
-  {
-    n: 1,
-    src: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1400&q=80",
-    alt: "Entrepôt industriel",
-  },
-  {
-    n: 2,
-    src: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=1400&q=80",
-    alt: "Conteneur maritime",
-  },
-  {
-    n: 3,
-    src: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1200&q=80",
-    alt: "Vêtements suspendus",
-  },
-  {
-    n: 4,
-    src: "https://images.unsplash.com/photo-1605883705077-8d3d3cebe78c?auto=format&fit=crop&w=1200&q=80",
-    alt: "Ballots de textile",
-  },
-  {
-    n: 5,
-    src: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80",
-    alt: "Vêtements colorés",
-  },
-  {
-    n: 6,
-    src: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1400&q=80",
-    alt: "Vêtements pliés",
-  },
-  {
-    n: 7,
-    src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80",
-    alt: "Entrepôt logistique",
-  },
-];
+import { VideoReel } from "./VideoReel";
 
 export function Gallery() {
   const { t } = useLang();
@@ -64,16 +29,35 @@ export function Gallery() {
           </div>
         </div>
 
-        <div className="gallery-grid">
-          {TILES.map((tile) => (
+        <Reveal as="div" variant="fade" className="gallery-films">
+          <div className="films-intro">
+            <div className="eyebrow">{t("gal.films.eyebrow")}</div>
+            <h3 className="films-title">
+              <span dangerouslySetInnerHTML={html(t("gal.films.title"))} />
+            </h3>
+            <p>{t("gal.films.lead")}</p>
+          </div>
+          <div className="films-reels">
+            <VideoReel src="/platform-film-1.mp4" caption={t("gal.film.1")} />
+            <VideoReel src="/platform-film-2.mp4" caption={t("gal.film.2")} />
+          </div>
+        </Reveal>
+
+        <div className="gallery-masonry">
+          {GALLERY.map((shot) => (
             <Reveal
-              key={tile.n}
-              as="a"
+              key={shot.capKey}
+              as="figure"
               variant="img"
-              className={`gallery-item g-${tile.n}`}
+              className={`gallery-item${shot.crop ? ` gm-${shot.crop}` : ""}`}
             >
-              <img loading="lazy" src={tile.src} alt={tile.alt} />
-              <span className="cap">{t(`gal.cap.${tile.n}`)}</span>
+              <Image
+                src={shot.src}
+                alt={t(shot.capKey)}
+                placeholder="blur"
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, (max-width: 1200px) 33vw, 25vw"
+              />
+              <span className="cap">{t(shot.capKey)}</span>
             </Reveal>
           ))}
         </div>

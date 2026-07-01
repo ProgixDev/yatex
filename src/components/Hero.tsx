@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useLang, html } from "@/lib/i18n/LangContext";
+import { IMG } from "@/lib/images";
 import { Reveal } from "./Reveal";
 import { WordReveal } from "./WordReveal";
 import { IconArrow } from "./Icons";
@@ -10,23 +12,17 @@ export function Hero() {
 
   return (
     <section className="hero" id="accueil" data-screen-label="01 Hero">
-      <video
-        className="hero-bg"
+      <Image
         id="heroBg"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        poster="https://images.unsplash.com/photo-1601333144130-8cbb312386b6?auto=format&fit=crop&w=2400&q=80"
-      >
-        <source
-          src="https://assets.mixkit.co/videos/preview/mixkit-warehouse-port-for-cargo-ships-39462-hd-ready.mp4"
-          type="video/mp4"
-        />
-        <source src="https://assets.mixkit.co/videos/39462/39462-720.mp4" type="video/mp4" />
-        <source src="https://assets.mixkit.co/videos/39462/39462-360.mp4" type="video/mp4" />
-      </video>
+        className="hero-bg"
+        src={IMG.warehouseBales}
+        alt=""
+        aria-hidden="true"
+        fill
+        priority
+        placeholder="blur"
+        sizes="100vw"
+      />
       <div className="hero-overlay" />
       <div className="hero-noise" />
 

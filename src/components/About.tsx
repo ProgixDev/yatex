@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useLang, html } from "@/lib/i18n/LangContext";
+import { IMG } from "@/lib/images";
 import { Reveal } from "./Reveal";
 
 export function About() {
@@ -81,9 +83,12 @@ export function About() {
           </div>
 
           <Reveal as="figure" variant="img" className="about-figure">
-            <img
-              src="https://images.unsplash.com/photo-1604176354204-9268737828e4?auto=format&fit=crop&w=1400&q=80"
-              alt="Ballots de textile en entrepôt"
+            <Image
+              src={IMG.sortingHall}
+              alt={t("about.figure.alt")}
+              fill
+              placeholder="blur"
+              sizes="(max-width: 960px) 100vw, 45vw"
             />
             <figcaption className="about-meta">
               <span className="l">{t("about.figure.l")}</span>
