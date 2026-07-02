@@ -58,10 +58,11 @@ const INITIAL: State = {
 };
 
 export function Configurator() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [state, setState] = useState<State>(INITIAL);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const setField = <K extends keyof State>(k: K, v: State[K]) =>
     setState((s) => ({ ...s, [k]: v }));
@@ -81,14 +82,52 @@ export function Configurator() {
     return true;
   };
 
+  const label = (
+    list: readonly { id: string; key: string }[],
+    id: string | null,
+  ) => {
+    const item = id ? list.find((x) => x.id === id) : undefined;
+    return item ? t(item.key) : "";
+  };
+
+  const submit = async () => {
+    setSending(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          category: label(CATEGORIES, state.category),
+          volume: label(VOLUMES, state.volume),
+          market: label(MARKETS, state.market),
+          country: state.country,
+          fullname: state.fullname,
+          company: state.company,
+          email: state.email,
+          phone: state.phone,
+          message: state.message,
+          lang,
+        }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      setSubmitted(true);
+    } catch {
+      setError(t("cfg.error"));
+    } finally {
+      setSending(false);
+    }
+  };
+
   const go = (dir: 1 | -1) => {
+    if (sending) return;
     if (dir > 0) {
       if (!validateStep()) {
         setError(t("cfg.required"));
         return;
       }
       if (state.step === 3) {
-        setSubmitted(true);
+        void submit();
         return;
       }
       setState((s) => ({ ...s, step: Math.min(3, s.step + 1) }));
@@ -288,8 +327,17 @@ export function Configurator() {
           {t("cfg.back")}
         </button>
         <span className="cfg-fine">{t("cfg.fine")}</span>
-        <button type="button" className="btn cfg-next" onClick={() => go(1)}>
-          {state.step === 3 ? t("cfg.submit") : t("cfg.next")}
+        <button
+          type="button"
+          className="btn cfg-next"
+          onClick={() => go(1)}
+          disabled={sending}
+        >
+          {state.step === 3
+            ? sending
+              ? t("cfg.sending")
+              : t("cfg.submit")
+            : t("cfg.next")}
           <IconArrow className="arrow" />
         </button>
       </div>

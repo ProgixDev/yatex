@@ -228,6 +228,9 @@ export const DICT: Record<Lang, Record<string, string>> = {
     "cfg.success":
       "Demande envoyée — nous revenons vers vous sous 24h ouvrées.",
     "cfg.required": "Veuillez compléter les champs requis.",
+    "cfg.sending": "Envoi en cours…",
+    "cfg.error":
+      "L’envoi a échoué. Veuillez réessayer ou nous écrire directement.",
 
     "foot.tag":
       "Votre partenaire en recyclage et tri de friperie en Tunisie. Importation, tri, valorisation, conditionnement, export.",
@@ -457,6 +460,9 @@ export const DICT: Record<Lang, Record<string, string>> = {
     "cfg.fine": "Your information remains strictly confidential.",
     "cfg.success": "Request sent — we’ll respond within one business day.",
     "cfg.required": "Please complete the required fields.",
+    "cfg.sending": "Sending…",
+    "cfg.error":
+      "Sending failed. Please try again or email us directly.",
 
     "foot.tag":
       "Your partner for used-clothing sorting and recycling in Tunisia. Import, sort, grade, bale, export.",

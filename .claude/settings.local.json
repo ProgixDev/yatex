@@ -18,7 +18,10 @@
       "PowerShell(Move-Item \"c:\\\\dev\\\\yatex\\\\yatex-cfg.js\" \"c:\\\\dev\\\\yatex\\\\reference\\\\yatex-cfg.js\")",
       "PowerShell(Move-Item \"c:\\\\tmp\\\\yatex-reference\" \"c:\\\\dev\\\\yatex\\\\reference\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
-      "Bash(curl -s -o /tmp/yatex.html -w \"%{http_code}\\\\n\" http://localhost:3000/)"
+      "Bash(curl -s -o /tmp/yatex.html -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(git branch *)",
+      "PowerShell($ok=$false; for\\($i=0;$i -lt 40;$i++\\){ try { Invoke-WebRequest -UseBasicParsing \"http://localhost:3939\" -TimeoutSec 3 | Out-Null; $ok=$true; break } catch { Start-Sleep -Milliseconds 1000 } }; Write-Output \"ready=$ok\")",
+      "PowerShell($ok=$false; for\\($i=0;$i -lt 45;$i++\\){ try { Invoke-WebRequest -UseBasicParsing \"http://localhost:3939\" -TimeoutSec 3 | Out-Null; $ok=$true; break } catch { Start-Sleep -Milliseconds 1000 } }; Write-Output \"ready=$ok\")"
     ]
   }
 }
